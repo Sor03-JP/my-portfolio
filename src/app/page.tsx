@@ -5,7 +5,7 @@ export default function Home() {
     <main>
       <div className="grid grid-cols-1 md:grid-cols-2">
         {/* 左カラム */}
-        <div className="sticky top-0 h-screen">
+        <div className="md:sticky md:top-0 md:h-screen h-[80vh]">
           <LeftPanel />
         </div>
 
