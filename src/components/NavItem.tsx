@@ -37,6 +37,7 @@ export default function NavItem({
     >
       <motion.span
         className="mr-2 flex-shrink-0"
+        initial={{ opacity: 0, scale: 0, width: 0 }}
         animate={{
           opacity: showIcon ? 1 : 0,
           scale: showIcon ? 1 : 0,
