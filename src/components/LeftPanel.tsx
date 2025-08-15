@@ -1,8 +1,11 @@
 import Image from "next/image";
+import MobileMenu from "@/components/MobileMenu";
 
 const LeftPanel = () => {
   return (
     <div className="relative h-full overflow-hidden">
+      <MobileMenu />
+      
       {/* 背景グラデーション */}
       <div
         className="absolute inset-0 z-0"
