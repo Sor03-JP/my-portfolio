@@ -2,40 +2,51 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 type NavItemProps = {
   href: string;
   children: React.ReactNode;
   icon: React.ReactNode;
+  onHoverChange?: (hovered: boolean) => void;
+  isHoveredGlobal?: boolean;
 };
 
-const NavItem = ({ href, children, icon }: NavItemProps) => {
-  const [isHovered, setIsHovered] = useState(false);
+export default function NavItem({
+  href,
+  children,
+  icon,
+  onHoverChange,
+  isHoveredGlobal = false,
+}: NavItemProps) {
+  const [isHoveredLocal, setIsHoveredLocal] = useState(false);
+  const showIcon = isHoveredLocal || isHoveredGlobal;
 
   return (
     <Link
       href={href}
-      className="font-en font-bold relative flex items-center px-3 py-2 text-sm text-gray-300 transition-colors hover:text-white"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      className="font-en font-bold flex items-center px-1 py-2 text-sm text-gray-300 transition-colors hover:text-white"
+      onMouseEnter={() => {
+        setIsHoveredLocal(true);
+        onHoverChange?.(true);
+      }}
+      onMouseLeave={() => {
+        setIsHoveredLocal(false);
+        onHoverChange?.(false);
+      }}
     >
-      <AnimatePresence>
-        {isHovered && (
-          <motion.span
-            className="absolute left-0 top-1/2 -translate-y-1/2 mr-2 origin-right"
-            initial={{ opacity: 0, scale: 0, x: 10 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            exit={{ opacity: 0, scale: 0, x: 10 }}
-            transition={{ type: "spring", duration: 0.4 }}
-          >
-            {icon}
-          </motion.span>
-        )}
-      </AnimatePresence>
-      <span className="ml-4">{children}</span>
+      <motion.span
+        className="mr-2 flex-shrink-0"
+        animate={{
+          opacity: showIcon ? 1 : 0,
+          scale: showIcon ? 1 : 0,
+          width: showIcon ? "auto" : 0,
+        }}
+        transition={{ duration: 0.2, ease: "easeInOut" }}
+      >
+        {icon}
+      </motion.span>
+      <span>{children}</span>
     </Link>
   );
-};
-
-export default NavItem;
+}
