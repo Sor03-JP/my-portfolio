@@ -1,4 +1,5 @@
 import LeftPanel from "@/components/LeftPanel";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         {/* スクロールを試すために高さを長くし、デバッグ用に背景色を付けています */}
         <div className="h-[200vh]">
           {/* ここに右側のコンテンツ（SAWABEなど）が入ります */}
+          <Header />
         </div>
       </div>
     </main>

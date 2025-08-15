@@ -8,7 +8,7 @@ const LeftPanel = () => {
         className="absolute inset-0 z-0"
         style={{
           backgroundImage:
-            "linear-gradient(to bottom, #2C5656 30%, #6E592E 100%)",
+            "linear-gradient(to bottom, #204544 30%, #B39758 100%)",
         }}
       />
 
