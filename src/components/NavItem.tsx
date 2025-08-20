@@ -25,7 +25,7 @@ export default function NavItem({
   return (
     <Link
       href={href}
-      className="font-en font-bold flex items-center px-1 py-2 text-sm text-gray-300 transition-colors hover:text-white"
+      className="font-en font-bold flex items-center px-1 py-2 text-sm text-gray-300 transition-colors hover:text-primary"
       onMouseEnter={() => {
         setIsHoveredLocal(true);
         onHoverChange?.(true);

@@ -6,7 +6,7 @@ import { ArrowDown } from "lucide-react";
 export default function ScrollIndicator() {
   return (
     <motion.div
-      className="flex flex-col items-center gap-2 text-sm text-gray-400"
+      className="flex flex-col items-center gap-2 text-sm text-gray-300"
       // y軸方向に 0px → 10px → 0px と移動するアニメーション
       animate={{ y: [0, 10, 0] }}
       // アニメーションを無限に繰り返す設定

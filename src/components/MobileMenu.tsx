@@ -77,7 +77,7 @@ export default function MobileMenu() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="font-en font-bold flex items-center gap-x-4 p-2 text-lg text-gray-300 transition-colors hover:text-white"
+                      className="font-en font-bold flex items-center gap-x-4 p-2 text-lg text-gray-300 transition-colors hover:text-primary"
                       onClick={() => setIsOpen(false)}
                     >
                       {link.icon}
