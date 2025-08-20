@@ -75,7 +75,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="flex items-center gap-x-1 text-sm text-primary transition-colors hover:text-primary/80"
           >
-            <span>Github</span>
+            <span>GitHub</span>
             <ExternalLink className="h-4 w-4" />
           </a>
         </div>
