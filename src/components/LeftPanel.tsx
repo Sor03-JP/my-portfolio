@@ -1,6 +1,5 @@
 import Image from "next/image";
 import MobileMenu from "@/components/MobileMenu";
-import ScrollIndicator from "@/components/ScrollIndicator"; // ← インポート
 
 const LeftPanel = () => {
   return (
