@@ -24,7 +24,7 @@ export default function Home() {
             <div className="relative h-[65%] md:-mt-[70px]">
               <div className="absolute top-[35%] left-1/2 w-full -translate-x-1/2 flex flex-col items-center">
                 <Image
-                  src="/sawabe.svg"
+                  src="/SAWABE.svg"
                   alt="Sawabe"
                   width={400}
                   height={190}
