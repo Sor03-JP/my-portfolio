@@ -4,6 +4,7 @@ import ScrollIndicator from "@/components/ScrollIndicator";
 import ProductsSection from "@/components/ProductsSection";
 import ProfileSection from "@/components/ProfileSection";
 import ConnectSection from "@/components/ConnectSection"; 
+import Footer from "@/components/Footer";
 import Image from "next/image";
 
 export default function Home() {
@@ -46,14 +47,13 @@ export default function Home() {
             <ScrollIndicator />
           </div>
 
-          {/* ↓ PRODUCTSコンテンツ */}
+          {/* ↓ コンテンツ */}
           <ProductsSection />
-
-          {/* ↓ PROFILEコンテンツ */}
           <ProfileSection />
-
-          {/* ↓ CONNECTコンテンツ */}
           <ConnectSection />
+          
+          {/* ↓ フッター */}
+          <Footer />
         </div>
       </div>
     </main>
