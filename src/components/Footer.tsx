@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 const footerNavLinks = [
   { href: "/", label: "HOME" },
@@ -85,6 +86,7 @@ const Footer = () => {
           &copy; {currentYear} Sora SAWABE Portfolio
         </p>
       </div>
+      <ScrollToTopButton />
     </footer>
   );
 };

@@ -5,6 +5,7 @@ import ProductsSection from "@/components/ProductsSection";
 import ProfileSection from "@/components/ProfileSection";
 import ConnectSection from "@/components/ConnectSection"; 
 import Footer from "@/components/Footer";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import Image from "next/image";
 
 export default function Home() {
