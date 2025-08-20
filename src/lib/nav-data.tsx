@@ -17,8 +17,8 @@ export const navLinks = [
     icon: <User className="h-4 w-4" strokeWidth={3} absoluteStrokeWidth />,
   },
   {
-    href: "#contact",
-    label: "CONTACT",
+    href: "#connect",
+    label: "CONNECT",
     icon: <Send className="h-4 w-4" strokeWidth={3} absoluteStrokeWidth />,
   },
 ];

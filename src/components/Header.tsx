@@ -9,7 +9,7 @@ export default function Header() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <header className="hidden md:flex sticky top-0 z-30 h-[70px] w-full items-center justify-end bg-[#0D1117]/80 px-8 backdrop-blur-sm">
+    <header className="hidden md:flex sticky top-0 z-30 h-[70px] w-full items-center justify-end bg-background/80 px-8 backdrop-blur-sm">
         <nav>
           <ul className="flex items-center gap-x-2">
             {navLinks.map((link, index) => {

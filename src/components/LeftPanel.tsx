@@ -23,7 +23,7 @@ const LeftPanel = () => {
               height={198}
               className="h-[190px] w-auto"
             />
-            <p className="font-en font-bold mt-2 text-sm tracking-widest">
+            <p className="font-en font-bold mt-0 md:mt-2 text-sm tracking-widest">
               Frontend Engineer
             </p>
             {/* ↓ モバイルでのみ表示するテキストを追加 */}
