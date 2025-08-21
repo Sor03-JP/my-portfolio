@@ -25,7 +25,7 @@ export default function Home() {
               <div className="absolute top-[35%] left-1/2 w-full -translate-x-1/2 flex flex-col items-center">
                 <div className="relative" style={{ height: 190, width: 400 }}>
                   <Image
-                    src="/sawabe.svg"
+                    src="/SAWABE.svg"
                     alt="Sawabe"
                     width={400 * 4}
                     height={190 * 4}
