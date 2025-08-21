@@ -22,13 +22,15 @@ const Footer = () => {
     <footer className="bg-background py-8 px-8">
       <div className="mx-auto flex max-w-xl flex-col items-center gap-y-6">
         {/* Sora.svg ロゴ */}
-        <Image
-          src="/Sora.svg"
-          alt="Sora"
-          width={120}
-          height={40}
-          className="h-auto"
-        />
+        <div className="relative mb-4" style={{ height: 40, width: 120 }}>
+          <Image
+            src="/Sora.svg"
+            alt="Sora"
+            width={120 * 4} // 4倍のサイズ
+            height={40 * 4}  // 4倍のサイズ
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pb-10" // 1/4に縮小
+          />
+        </div>
 
         {/* ナビゲーション */}
         <ul className="flex flex-wrap justify-center gap-x-8 gap-y-2">

@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import ScrollIndicator from "@/components/ScrollIndicator";
 import ProductsSection from "@/components/ProductsSection";
 import ProfileSection from "@/components/ProfileSection";
-import ConnectSection from "@/components/ConnectSection"; 
+import ConnectSection from "@/components/ConnectSection";
 import Footer from "@/components/Footer";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import Image from "next/image";
@@ -23,13 +23,15 @@ export default function Home() {
             {/* --- 上半分 (ロゴ用) --- */}
             <div className="relative h-[65%] md:-mt-[70px]">
               <div className="absolute top-[35%] left-1/2 w-full -translate-x-1/2 flex flex-col items-center">
-                <Image
-                  src="/SAWABE.svg"
-                  alt="Sawabe"
-                  width={400}
-                  height={190}
-                  className="h-[190px] w-auto"
-                />
+                <div className="relative" style={{ height: 190, width: 400 }}>
+                  <Image
+                    src="/SAWABE.svg"
+                    alt="Sawabe"
+                    width={400 * 4}
+                    height={190 * 4}
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                  />
+                </div>
                 <p className="font-en mt-2 text-sm tracking-wider">
                   focused on UX/UI
                 </p>
@@ -44,7 +46,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex justify-center py-10 md:hidden">
+          <div className="flex justify-center pt-4 pb-10 md:hidden">
             <ScrollIndicator />
           </div>
 
@@ -52,7 +54,7 @@ export default function Home() {
           <ProductsSection />
           <ProfileSection />
           <ConnectSection />
-          
+
           {/* ↓ フッター */}
           <Footer />
         </div>
