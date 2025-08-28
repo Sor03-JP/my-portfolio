@@ -5,12 +5,13 @@ import ProductsSection from "@/components/ProductsSection";
 import ProfileSection from "@/components/ProfileSection";
 import ConnectSection from "@/components/ConnectSection";
 import Footer from "@/components/Footer";
-import ScrollToTopButton from "@/components/ScrollToTopButton";
 import Image from "next/image";
+import MobileMenu from "@/components/MobileMenu";
 
 export default function Home() {
   return (
     <main>
+      <MobileMenu />
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div className="md:sticky md:top-0 h-[80vh] md:h-screen">
           <LeftPanel />
@@ -51,8 +52,11 @@ export default function Home() {
           </div>
 
           {/* ↓ コンテンツ */}
+          <h2 className="font-en pl-8 text-5xl md:text-6xl font-bold text-primary">PRODUCTS</h2>
           <ProductsSection />
+          <h2 className="font-en pl-8 text-5xl md:text-6xl font-bold text-primary">PROFILE</h2>
           <ProfileSection />
+          <h2 className="font-en pl-8 text-5xl md:text-6xl font-bold text-primary">CONNECT</h2>
           <ConnectSection />
 
           {/* ↓ フッター */}
