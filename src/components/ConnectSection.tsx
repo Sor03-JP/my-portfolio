@@ -3,7 +3,7 @@
 import { useCopyToClipboard } from "@/lib/useCopyToClipboard";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, Twitter, Github } from "lucide-react";
+import { Mail, Twitter, Github, Copy } from "lucide-react";
 
 // 各接続情報のリンクをまとめたサブコンポーネント
 const ConnectLink = ({
@@ -13,6 +13,7 @@ const ConnectLink = ({
   feedbackText,
   href,
   onClick,
+  isCopyable,
 }: {
   icon: React.ReactNode;
   serviceName: string;
@@ -20,6 +21,7 @@ const ConnectLink = ({
   feedbackText?: string;
   href?: string;
   onClick?: () => void;
+  isCopyable?: boolean;
 }) => {
   // アカウント名部分をリンクまたはボタンにする
   const AccountInteractive = () => {
@@ -48,8 +50,16 @@ const ConnectLink = ({
         {icon}
         <span className="font-en text-base text-gray-400">{serviceName}</span>
       </div>
-      <div className="mt-1 flex items-center gap-x-3">
+      <div className="mt-1 flex items-center gap-x-2">
         <AccountInteractive />
+        {isCopyable && (
+          <button
+            onClick={onClick}
+            className="text-gray-400 transition-colors hover:text-primary"
+          >
+            <Copy className="h-4 w-4" />
+          </button>
+        )}
         <AnimatePresence>
           {feedbackText && (
             <motion.span
@@ -92,7 +102,7 @@ const ConnectSection = () => {
   return (
     <section
       id="connect"
-      className="relative bg-background px-8 pb-16"
+      className="relative bg-background pl-8 pb-16"
     >
       <div className="max-w-xl">
         <h2 className="font-en text-5xl md:text-6xl font-bold text-primary">CONNECT</h2>
@@ -104,6 +114,7 @@ const ConnectSection = () => {
             accountName={email}
             onClick={handleCopy}
             feedbackText={isCopied ? "COPIED!" : undefined}
+            isCopyable
           />
           <ConnectLink 
             icon={<Twitter className="h-5 w-5 text-gray-400"/>}
