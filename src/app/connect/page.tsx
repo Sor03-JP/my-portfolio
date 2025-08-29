@@ -18,11 +18,11 @@ export default function ConnectPage() {
         {/* 右カラム */}
         <div className="relative">
           <Header />
-          
+
           {/* ファーストビュー */}
-          <div className="flex h-[70vh] md:h-screen flex-col">
+          <div className="flex md:h-screen flex-col">
             {/* --- 上半分 (ロゴ用) --- */}
-            <div className="relative h-[40%] md:h-[65%] md:-mt-[70px]">
+            <div className="relative h-[40vh] md:h-[65vh] md:-mt-[70px]">
               <div className="absolute px-8 top-[35%] left-1/2 w-full -translate-x-1/2 flex flex-col items-center">
                 <Image
                   src="/CONNECT.svg"
@@ -33,10 +33,7 @@ export default function ConnectPage() {
                 />
               </div>
             </div>
-            {/* --- 下半分 (スクロールサイン用) --- */}
-            <div className="relative h-[35%] pb-16">
               <ConnectSection />
-            </div>
           </div>
 
           <Footer />

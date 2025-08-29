@@ -101,10 +101,10 @@ const ConnectSection = () => {
 
   return (
     <section
-      className="relative bg-background px-8 pb-16"
+      className="relative bg-background p-8"
     >
       <div className="max-w-xl">
-        <div className="mt-12 md:mt-0 flex flex-col gap-8">
+        <div className="mt-0 flex flex-col gap-8">
           <ConnectLink
             icon={<Mail className="h-5 w-5 text-gray-400"/>}
             serviceName="EMAIL"
