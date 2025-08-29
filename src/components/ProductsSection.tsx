@@ -4,10 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const ProductsSection = () => {
   return (
-    <section id="products" className="relative bg-background px-8 pt-8 lg:h-screen">
-      <h2 className="relative font-en text-5xl md:text-6xl font-bold text-primary">
-        PRODUCTS
-      </h2>
+    <section className="relative bg-background px-8 lg:h-screen">
       
         {/* Mac画像のコンテナ */}
         <div className="absolute top-1/2 left-1/2 w-[60%] -translate-x-[100%] translate-y-[-25%] md:w-[50%] md:-translate-x-[100%] md:translate-y-[0%]">

@@ -19,20 +19,18 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-background py-8 px-8">
+    <footer className="bg-background relative p-8">
       <div className="mx-auto flex max-w-xl flex-col items-center gap-y-6">
-        {/* Sora.svg ロゴ */}
-        <div className="relative mb-4" style={{ height: 40, width: 120 }}>
+        {/* logo */}
           <Image
             src="/Sora.svg"
             alt="Sora"
-            width={120 * 4} // 4倍のサイズ
-            height={40 * 4}  // 4倍のサイズ
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pb-10" // 1/4に縮小
+            width={120}
+            height={40}
+            className="h-auto"
           />
-        </div>
 
-        {/* ナビゲーション */}
+        {/* nav */}
         <ul className="flex flex-wrap justify-center gap-x-8 gap-y-2">
           {footerNavLinks.map((link) => (
             <li
@@ -61,6 +59,8 @@ const Footer = () => {
             </li>
           ))}
         </ul>
+
+        {/* social links */}
         <div className="flex items-center gap-x-6">
           <a
             href="https://x.com/Sora27_eng"
@@ -82,8 +82,7 @@ const Footer = () => {
           </a>
         </div>
 
-
-        {/* コピーライト */}
+        {/* copyright */}
         <p className="text-xs text-primary/70">
           &copy; {currentYear} Sora SAWABE Portfolio
         </p>

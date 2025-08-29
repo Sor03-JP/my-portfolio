@@ -4,11 +4,9 @@ import { Button } from "@/components/ui/button";
 const ProfileSection = () => {
   return (
     <section
-      id="profile"
       className="relative bg-background px-8 pb-16"
     >
       <div className="max-w-xl">
-        <h2 className="font-en text-5xl md:text-6xl font-bold text-primary">PROFILE</h2>
         <p className="mt-8 md:mt-16 text-base text-gray-300 leading-relaxed">
           2003年11月生まれ、神奈川県在住。
           <br />
