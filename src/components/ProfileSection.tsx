@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 const ProfileSection = () => {
   return (
     <section
-      id="profile"
       className="relative bg-background px-8 pb-16"
     >
       <div className="max-w-xl">

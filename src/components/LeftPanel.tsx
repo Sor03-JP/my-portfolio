@@ -13,12 +13,12 @@ const LeftPanel = () => {
       <div className="relative z-10 flex h-full flex-col">
         <div className="relative h-[65%]">
           <div className="absolute z-20 top-[35%] left-1/2 w-full -translate-x-1/2 flex flex-col items-center">
-            <div className="relative" style={{ height: 190, width: 228 }}>
+            <div className="relative" style={{ height: 190, width: 220 }}>
               <Image
                 src="/Sora.svg"
                 alt="Sora"
-                width={228 * 4} // 4倍のサイズ
-                height={198 * 4} // 4倍のサイズ
+                width={220}
+                height={190}
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" 
               />
             </div>
