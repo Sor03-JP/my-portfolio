@@ -12,25 +12,30 @@ const LeftPanel = () => {
       />
       <div className="relative z-10 flex h-full flex-col">
         <div className="relative h-[65%]">
-          <div className="absolute z-20 top-[35%] left-1/2 w-full -translate-x-1/2 flex flex-col items-center">
-            <div className="relative" style={{ height: 190, width: 220 }}>
-              <Image
-                src="/Sora.svg"
-                alt="Sora"
-                width={220}
-                height={190}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" 
-              />
+          <div className="absolute z-20 px-8 top-[35%] left-1/2 w-full -translate-x-1/2 flex flex-col items-center">
+            <div className="relative w-full max-w-[440px] aspect-[440/190] flex justify-center items-center">
+              <div className="relative w-1/2 aspect-[220/190]">
+                <Image
+                  src="/Sora.svg"
+                  alt="Sora"
+                  width={220}
+                  height={190}
+                  className="h-[190px] w-auto"
+                />
+              </div>
             </div>
-            <p className="font-en font-bold mt-0 md:mt-2 text-sm tracking-widest">
+            
+            <p className="font-en mt-0 md:mt-2 text-sm tracking-wider">
               Frontend Engineer
             </p>
-            {/* ↓ モバイルでのみ表示するテキストを追加 */}
+
+            {/* ↓ モバイルでのみ表示するテキスト */}
             <p className="font-en mt-0 text-sm tracking-wider md:hidden">
               focused on UX/UI
             </p>
           </div>
         </div>
+
         <div className="relative h-[35%]">
           <Image
             src="/mono-sora.png"

@@ -9,8 +9,7 @@ export default function ScrollIndicator() {
     if (!element) return;
 
     if (window.innerWidth >= 768) {
-      // PC表示の場合：ヘッダーの高さを考慮してスクロール
-      const headerOffset = 140; // ヘッダーの高さ
+      const headerOffset = 70; // ヘッダーの高さ
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
@@ -19,7 +18,6 @@ export default function ScrollIndicator() {
         behavior: "smooth",
       });
     } else {
-      // モバイル表示の場合：要素のトップへスクロール
       element.scrollIntoView({
         behavior: "smooth",
         block: "start",
