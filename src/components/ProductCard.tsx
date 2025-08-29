@@ -8,52 +8,61 @@ type ProductCardProps = {
   product: Product;
 };
 
-// 画像用のアニメーションバリアントを定義
+const fillVariants = {
+  rest: { scale: 0 },
+  hover: { scale: 1 },
+};
+
 const imageVariants = {
-  rest: { scale: 1 }, // 通常時の状態
-  hover: { scale: 1.05 }, // ホバー時の状態
+  rest: { scale: 1 },
+  hover: { scale: 1.1 },
 };
 
 const ProductCard = ({ product }: ProductCardProps) => {
   return (
-    // ↓ div を motion.div に変更し、アニメーションを制御
     <motion.div
-      className="group relative flex flex-col gap-4 rounded-lg bg-card p-4 shadow-lg transition-colors duration-300 ease-in-out hover:bg-foreground"
-      initial="rest" // 初期状態を 'rest' に設定
-      whileHover="hover" // ホバー時に 'hover' バリアントを適用
+      className="group relative flex flex-col gap-4 rounded-lg bg-card p-4 shadow-lg"
+      initial="rest"
+      whileHover="hover"
     >
-      {/* 画像エリア (画像の「窓」) */}
-      <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
-        {/* ↓ このmotion.divが親のホバーに連動してアニメーションします */}
-        <motion.div
-          className="h-full w-full"
-          variants={imageVariants} // 定義したバリアントを適用
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        >
-          <Image
-            src={product.imageSrc}
-            alt={product.title}
-            fill
-            className="object-cover"
-          />
-        </motion.div>
-      </div>
+      <motion.div
+        className="absolute inset-0 z-0 rounded-lg bg-foreground"
+        variants={fillVariants}
+        transition={{ duration: 0.2, ease: "easeInOut" }}
+      />
 
-      {/* テキストエリア */}
-      <div>
-        <p className="text-xs text-gray-400">{product.team}</p>
-        <h3 className="mt-1 font-bold text-3xl text-foreground transition-colors duration-300 group-hover:text-primary-foreground">
-          {product.title}
-        </h3>
-        <div className="mt-2 flex flex-col items-start">
-          {product.tags.map((tag) => (
-            <span
-              key={tag}
-              className="pb-1 text-xs text-foreground transition-colors duration-300 group-hover:text-primary-foreground"
-            >
-              {`#${tag}`}
-            </span>
-          ))}
+      <div className="relative z-10 flex flex-col gap-4">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+          <motion.div
+            className="h-full w-full"
+            variants={imageVariants}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+          >
+            <Image
+              src={product.imageSrc}
+              alt={product.title}
+              fill
+              className="object-cover"
+            />
+          </motion.div>
+        </div>
+
+        {/* テキストエリア */}
+        <div>
+          <p className="text-xs text-gray-400">{product.team}</p>
+          <h3 className="mt-1 font-bold text-3xl text-foreground transition-colors duration-300 group-hover:text-primary-foreground">
+            {product.title}
+          </h3>
+          <div className="mt-2 flex flex-col items-start">
+            {product.tags.map((tag) => (
+              <span
+                key={tag}
+                className="pb-1 text-xs text-foreground transition-colors duration-300 group-hover:text-primary-foreground"
+              >
+                {`#${tag}`}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </motion.div>

@@ -36,7 +36,7 @@ export default function MobileMenu() {
           <motion.button
             key="menu"
             onClick={() => setIsOpen(true)}
-            className={`${baseButtonClasses} bg-[#0D1117] text-[#FAF9F6]`}
+            className={`${baseButtonClasses} bg-background text-primary`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -48,7 +48,7 @@ export default function MobileMenu() {
           <motion.button
             key="close"
             onClick={() => setIsOpen(false)}
-            className={`${baseButtonClasses} bg-[#FAF9F6] text-[#0D1117]`}
+            className={`${baseButtonClasses} bg-foreground text-primary-foreground`}
             style={{ originX: 0.8, originY: 0.2 }}
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -64,7 +64,7 @@ export default function MobileMenu() {
       <AnimatePresence>
         {isOpen && (
           <motion.nav
-            className="fixed top-4 right-4 z-40 flex h-[320px] w-[200px] flex-col overflow-hidden rounded-lg bg-[#0D1117] shadow-lg"
+            className="fixed top-4 right-4 z-40 flex h-[320px] w-[200px] flex-col overflow-hidden rounded-lg bg-background shadow-lg"
             style={{ originX: 0.8, originY: 0.05 }}
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
