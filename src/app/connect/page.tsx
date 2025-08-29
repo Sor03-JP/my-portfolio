@@ -29,11 +29,12 @@ export default function ConnectPage() {
                   alt="Connect"
                   width={440}
                   height={190}
-                  className="h-[190px] w-auto"
+                  className="w-[440px] h-[190px]"
                 />
               </div>
             </div>
-              <ConnectSection />
+            
+            <ConnectSection />
           </div>
 
           <Footer />
