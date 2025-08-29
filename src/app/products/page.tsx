@@ -2,10 +2,11 @@ import LeftPanel from "@/components/LeftPanel";
 import MobileMenu from "@/components/MobileMenu";
 import Header from "@/components/Header";
 import Image from "next/image";
-import ConnectSection from "@/components/ConnectSection";
 import Footer from "@/components/Footer";
+import { productsData } from "@/lib/products-data";
+import ProductCard from "@/components/ProductCard";
 
-export default function ConnectPage() {
+export default function ProductsPage() {
   return (
     <main>
       <MobileMenu />
@@ -18,22 +19,23 @@ export default function ConnectPage() {
         <div className="relative">
           <Header />
 
-          {/* ファーストビュー */}
-          <div className="flex md:h-screen flex-col">
-            {/* --- 上半分 (ロゴ用) --- */}
+          <div className="flex md:h-[70vh] flex-col">
             <div className="relative h-[70vh] md:h-[65vh] md:-mt-[70px]">
               <div className="absolute px-8 top-[35%] left-1/2 w-full -translate-x-1/2 flex flex-col items-center">
                 <Image
-                  src="/CONNECT.svg"
-                  alt="Connect"
+                  src="/PRODUCTS.svg"
+                  alt="Products"
                   width={440}
                   height={190}
                   className="w-[440px] h-[190px]"
                 />
               </div>
             </div>
-            
-            <ConnectSection />
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4">
+            {productsData.map((product) => (
+              <ProductCard key={product.title} product={product} />
+            ))}
           </div>
 
           <Footer />
