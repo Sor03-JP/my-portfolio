@@ -1,5 +1,4 @@
-import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiRemix, SiTailwindcss, SiShadcnui, SiSupabase, SiVercel, SiGit, SiGithub, SiFigma } from "react-icons/si";
-import { SiNetflix } from "react-icons/si";
+import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiRemix, SiTailwindcss, SiShadcnui, SiSupabase, SiVercel, SiGit, SiGithub, SiFigma, SiNetflix } from "react-icons/si";
 import Image from "next/image";
 
 // 自己紹介セクションのデータ

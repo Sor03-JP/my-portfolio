@@ -94,7 +94,10 @@ const ProfileContent = () => {
       >
         <div className="flex flex-col gap-y-6">
           {biographyData.map((item) => (
-            <BiographyItem key={item.event} year={item.year} event={item.event} />
+            <BiographyItem 
+            key={`${item.year}-${item.event.slice(0, 20)}`}
+            year={item.year} 
+            event={item.event} />
           ))}
         </div>
       </Section>
@@ -105,7 +108,7 @@ const ProfileContent = () => {
         isOpen={openSections.includes("tech")}
         onToggle={() => handleToggle("tech")}
       >
-        <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4">
           {Object.values(techStackData).map((tech) => (
             <div key={tech.name} className="flex items-center gap-x-3 rounded-md bg-card p-3">
               <span className="text-2xl text-gray-400">{tech.icon}</span>
