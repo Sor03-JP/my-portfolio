@@ -130,7 +130,7 @@ export const productsData: Product[] = [
     title: "Portfolio",
     tags: ["Next.js", "Shadcn/ui", "Motion"],
     details: {
-      coverImageSrc: "/portfolio-cover.png",
+      coverImageSrc: "/Portfolio-cover.png",
       liveUrl: "https://sora27eng.vercel.app/",
       githubUrl: "https://github.com/Sor03-JP/my-portfolio",
       developmentPeriod: "2025年8月-9月",
