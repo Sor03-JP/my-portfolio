@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import LeftPanel from "@/components/LeftPanel";
 import MobileMenu from "@/components/MobileMenu";
 import Header from "@/components/Header";
@@ -5,8 +8,12 @@ import Image from "next/image";
 import Footer from "@/components/Footer";
 import { productsData } from "@/lib/products-data";
 import ProductCard from "@/components/ProductCard";
+import ProductModal from "@/components/ProductModal";
+import type { Product } from "@/lib/products-data";
 
 export default function ProductsPage() {
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+
   return (
     <main>
       <MobileMenu />
@@ -32,15 +39,28 @@ export default function ProductsPage() {
               </div>
             </div>
           </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4">
             {productsData.map((product) => (
-              <ProductCard key={product.title} product={product} />
+              <div
+                key={product.title}
+                onClick={() => setSelectedProduct(product)}
+                className="cursor-pointer"
+              >
+                <ProductCard product={product} />
+              </div>
             ))}
           </div>
 
           <Footer />
         </div>
       </div>
+
+      <ProductModal
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+      />
+      
     </main>
   );
 }
