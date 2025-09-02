@@ -19,7 +19,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-background relative pt-25 pb-15 px-8">
+    <footer className="bg-background relative pt-24 pb-16 px-8">
       <div className="mx-auto flex max-w-xl flex-col items-center gap-y-6">
         {/* logo */}
           <Image
