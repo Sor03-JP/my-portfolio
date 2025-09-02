@@ -8,7 +8,7 @@ const ProfileSection = () => {
     >
       <div className="max-w-xl">
         <p className="text-base text-gray-300 leading-relaxed">
-          2003年11月生まれ、神奈川県在住。
+          2003年11月生まれ、神奈川県横浜市在住。
           <br />
           高校卒業後、東洋大学情報連携学部情報連携学科に入学し、
           <br />
