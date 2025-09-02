@@ -10,7 +10,6 @@ export default function ConnectPage() {
     <main>
       <MobileMenu />
       <div className="grid grid-cols-1 md:grid-cols-2">
-        {/* 左カラム (モバイルでは非表示) */}
         <div className="hidden md:block md:sticky md:top-0 md:h-screen">
           <LeftPanel />
         </div>
@@ -22,7 +21,7 @@ export default function ConnectPage() {
           {/* ファーストビュー */}
           <div className="flex md:h-screen flex-col">
             {/* --- 上半分 (ロゴ用) --- */}
-            <div className="relative h-[40vh] md:h-[65vh] md:-mt-[70px]">
+            <div className="relative h-[70vh] md:h-[65vh] md:-mt-[70px]">
               <div className="absolute px-8 top-[35%] left-1/2 w-full -translate-x-1/2 flex flex-col items-center">
                 <Image
                   src="/CONNECT.svg"
