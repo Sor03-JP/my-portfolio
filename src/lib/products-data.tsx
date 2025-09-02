@@ -1,5 +1,6 @@
 import { SiNextdotjs, SiTypescript, SiTailwindcss, SiRemix, SiSupabase, SiPrisma, SiReact, SiShadcnui, SiMapbox, SiMinio, SiDocker, SiFigma } from "react-icons/si";
 import { FaGithub } from "react-icons/fa";
+import { TbBrandFramerMotion } from "react-icons/tb";
 import Image from "next/image";
 
 const tech = {
@@ -8,6 +9,7 @@ const tech = {
   TAILWIND: { icon: <SiTailwindcss />, name: "Tailwind CSS" },
   SHADCN: { icon: <SiShadcnui />, name: "shadcn/ui" },
   REACT: { icon: <SiReact />, name: "React" },
+  MOTION: { icon: <TbBrandFramerMotion />, name: "Framer Motion" },
   REMIX: { icon: <SiRemix />, name: "Remix.js" },
   PRISMA: { icon: <SiPrisma />, name: "Prisma" },
   MINIO: { icon: <SiMinio />, name: "MinIO" },
@@ -61,7 +63,7 @@ export const productsData: Product[] = [
             ・お気に入りの飲食店やカフェを見つけたとき
           </p>
           <p>「ただのメモではなく、地図にメモがおければもっと見やすいのに」
-            <br/>そんな悩みを解決するサービスです。
+            <br />そんな悩みを解決するサービスです。
           </p>
         </>
       ),
@@ -123,24 +125,81 @@ export const productsData: Product[] = [
     },
   },
   {
-    imageSrc: "/Notepia-product.png",
+    imageSrc: "/Portfolio-product.png",
     team: "Solo Development",
     title: "Portfolio",
-    tags: ["Next.js", "Supabase", "shadcn/ui"],
+    tags: ["Next.js", "Shadcn/ui", "Motion"],
     details: {
       coverImageSrc: "/portfolio-cover.png",
       liveUrl: "https://sora27eng.vercel.app/",
       githubUrl: "https://github.com/Sor03-JP/my-portfolio",
       developmentPeriod: "2025年8月-9月",
-      description: "グループで旅行の計画を立てるWebサービスです。リアルタイムでの共同編集機能や、地図上でのスポット管理など、旅行計画の手間を解消し、楽しさを最大化することを目指しました。",
-      features: ["リアルタイム共同編集", "インタラクティブマップ (Mapbox API)", "Webプッシュ通知"],
-      role: (
+      description: (
         <p>
-          フロントエンド開発を担当しました。特に、ユーザーが直感的に操作できるUIの設計と、地図APIと連携したインタラクションの実装に注力しました。
-          {/* ここに後から画像や動画を追加できます */}
+          自身の技術を体現するために、デザイン/開発/デプロイまで全ての工程を一人で行ったポートフォリオサイトです。PCとモバイルの両方で自分の技術を提供できるよう、完全レスポンシブな設計で構築しました。
         </p>
       ),
-      techStack: [tech.NEXT],
+      features: [
+        "レスポンシブデザイン (PC/モバイル)",
+        "Framer MotionによるインタラクティブなUI",
+        "コンポーネントベースの設計",
+        "データとロジックの分離",
+        "クリップボードコピー機能"
+      ],
+      role: (
+        <div className="space-y-6">
+          <div>
+            <strong>コンポーネント設計とデータの分離</strong>
+            <p className="mt-2">
+              今後の機能追加や修正を簡単にするため、各セクションを独立したReactコンポーネントに分割しました。また、プロダクト情報や経歴などのテキスト情報は別のデータファイルに分離し、UIのコードと完全に分けて管理しています。
+            </p>
+            <div className="relative aspect-video rounded-lg overflow-hidden mt-4">
+              <Image src="/Portfolio-vscode.png" alt="PortfolioのVSCode" fill className="object-contain" />
+            </div>
+          </div>
+          <div>
+            <strong>最新技術の採用</strong>
+            <p className="mt-2">
+              モダンなWeb開発を意識し、Next.jsのApp Routerをベースに構築しました。next/fontを使い、フォント読み込みによるパフォーマンス低下を防ぐなど、表示速度にも配慮しています。
+            </p>
+          </div>
+          <div>
+            <strong>UX/UIへのこだわり</strong>
+            <ul className="list-disc list-inside space-y-2 mt-2">
+              <li>
+                レスポンシブデザイン: PCでは左右2カラム、モバイルでは1カラムというレイアウトの切り替えだけでなく、SVGのサイズやpaddingの値などを画面幅に応じて複数段階で調整し、どのデバイスでも最適な表示になるよう追求しました。
+              </li>
+              <div className="relative aspect-video rounded-lg overflow-hidden mt-4 mb-6">
+              <video
+                src="/Portfolio-responsive.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            </div>
+              <li>
+                Framer Motionを使い、ホバーやクリック時のフィードバックを直感的に伝えるアニメーションを実装しました。フッターの右下にあるロケットなど遊び心のあるアニメーションも取り入れています。
+              </li>
+              <div className="relative aspect-video rounded-lg overflow-hidden mt-4 mb-6">
+              <video
+                src="/Portfolio-motion.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            </div>
+              <li>
+                shadcn/uiのDialogではPCサイズ時に右カラムだけに表示するという要件を満たせなかったため、独自のモーダルを実装し、理想のUIを実現しました。
+              </li>
+            </ul>
+          </div>
+        </div>
+      ),
+      techStack: [tech.NEXT, tech.REACT, tech.TYPESCRIPT, tech.TAILWIND, tech.SHADCN, tech.MOTION, tech.GITHUB, tech.FIGMA],
     },
   },
 ];
