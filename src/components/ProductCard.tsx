@@ -18,13 +18,20 @@ const imageVariants = {
   hover: { scale: 1.1 },
 };
 
+const textVariants = {
+  rest: { color: "#FAF9F6" },
+  hover: { color: "#0D1117" },
+};
+
 const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <motion.div
-      className="group relative flex flex-col gap-4 rounded-lg bg-card p-4 shadow-lg"
+      className="relative flex flex-col gap-4 rounded-lg bg-card p-4 shadow-lg"
       initial="rest"
       whileHover="hover"
+      animate="rest"
     >
+      
       <motion.div
         className="absolute inset-0 z-0 rounded-lg bg-foreground"
         variants={fillVariants}
@@ -50,17 +57,23 @@ const ProductCard = ({ product }: ProductCardProps) => {
         {/* テキストエリア */}
         <div>
           <p className="text-xs text-gray-400">{product.team}</p>
-          <h3 className="mt-1 font-bold text-3xl text-foreground transition-colors duration-300 group-hover:text-primary-foreground">
+          <motion.h3
+            className="mt-1 font-bold text-3xl"
+            variants={textVariants}
+            transition={{ duration: 0.2 }}
+          >
             {product.title}
-          </h3>
+          </motion.h3>
           <div className="mt-2 flex flex-col items-start">
             {product.tags.map((tag) => (
-              <span
+              <motion.span
                 key={tag}
-                className="pb-1 text-xs text-foreground transition-colors duration-300 group-hover:text-primary-foreground"
+                className="pb-1 text-xs"
+                variants={textVariants}
+                transition={{ duration: 0.2 }}
               >
                 {`#${tag}`}
-              </span>
+              </motion.span>
             ))}
           </div>
         </div>
