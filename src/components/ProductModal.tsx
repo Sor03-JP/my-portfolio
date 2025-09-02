@@ -53,8 +53,9 @@ const ProductModal = ({ product, onClose }: ProductModalProps) => {
               <div className="flex-1 overflow-y-auto p-8 scrollbar-hide">
                 {/* 1. タイトルを一番上に配置 */}
                 <h2 className="font-en text-4xl font-bold text-left mb-2">{product.title}</h2>
-
-                <div className="flex gap-4 items-center mb-6">
+                <p className="text-sm text-md mb-2">{product.team} | {product.details.developmentPeriod}</p>
+                
+                <div className="flex gap-4 items-center mb-4">
                   {product.details.liveUrl && (
                     <a href={product.details.liveUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-1">
                       {product.details.liveUrl.replace('https://', '')} <ExternalLink size={14} />

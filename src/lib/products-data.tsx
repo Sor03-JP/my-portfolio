@@ -27,6 +27,7 @@ export type Product = {
     coverImageSrc: string;
     liveUrl?: string;
     githubUrl: string;
+    developmentPeriod: string;
     description: React.ReactNode;
     features: string[];
     role: React.ReactNode;
@@ -44,6 +45,7 @@ export const productsData: Product[] = [
       coverImageSrc: "/Notepia-cover.png",
       liveUrl: "https://notepia.cyberhub.jp/",
       githubUrl: "https://github.com/Hal-93/Notepia",
+      developmentPeriod: "2025年3月-5月",
       description: (
         <>
           <p className="mb-4">
@@ -129,6 +131,7 @@ export const productsData: Product[] = [
       coverImageSrc: "/portfolio-cover.png",
       liveUrl: "https://sora27eng.vercel.app/",
       githubUrl: "https://github.com/Sor03-JP/my-portfolio",
+      developmentPeriod: "2025年8月-9月",
       description: "グループで旅行の計画を立てるWebサービスです。リアルタイムでの共同編集機能や、地図上でのスポット管理など、旅行計画の手間を解消し、楽しさを最大化することを目指しました。",
       features: ["リアルタイム共同編集", "インタラクティブマップ (Mapbox API)", "Webプッシュ通知"],
       role: (
