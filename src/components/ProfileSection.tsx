@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 const ProfileSection = () => {
   return (
     <section
-      className="relative bg-background px-8 pb-16"
+      className="relative bg-background p-8"
     >
       <div className="max-w-xl">
-        <p className="mt-8 md:mt-16 text-base text-gray-300 leading-relaxed">
+        <p className="text-base text-gray-300 leading-relaxed">
           2003年11月生まれ、神奈川県在住。
           <br />
           高校卒業後、東洋大学情報連携学部情報連携学科に入学し、
@@ -15,7 +15,7 @@ const ProfileSection = () => {
           現在同大学3年生として在籍しています。
         </p>
         <p className="mt-4 text-base text-gray-300 leading-relaxed">
-          人の不満や手間を技術で解決したいという思いから、
+          「こんなアプリあったらいいのに」を実現する
           <br />
           フロントエンドエンジニアを目指しています。
         </p>
