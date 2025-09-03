@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP, Oswald } from "next/font/google";
+// ↓ fonts.tsからnotoSansJPとoswaldを正しくインポート
+import { notoSansJP, oswald } from '@/app/ui/fonts';
 import "./globals.css";
 import ClientLayout from "@/components/ClientLayout";
 
@@ -8,19 +9,7 @@ export const metadata: Metadata = {
   description: "A portfolio created with Next.js",
 };
 
-const notoSansJP = Noto_Sans_JP({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  display: "swap",
-  variable: "--font-noto-sans-jp",
-});
-
-const oswald = Oswald({
-  subsets: ["latin"],
-  weight: ["500", "700"],
-  display: "swap",
-  variable: "--font-oswald",
-});
+// ↓↓ ここにあった const notoSansJP = ... と const oswald = ... の定義を丸ごと削除します
 
 export default function RootLayout({
   children,
