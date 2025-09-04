@@ -1,11 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef, useEffect } from "react";
 import type { Product } from "@/lib/products-data";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 type ProductCardProps = {
   product: Product;
+  onCardClick: (product: Product) => void;
+  isAnimated: boolean;
+  onInView: () => void;
+  onOutOfView: () => void;
 };
 
 const fillVariants = {
@@ -23,13 +29,32 @@ const textVariants = {
   hover: { color: "#0D1117" },
 };
 
-const ProductCard = ({ product }: ProductCardProps) => {
+const ProductCard = ({ product, onCardClick, isAnimated, onInView, onOutOfView  }: ProductCardProps) => {
+  const ref = useRef(null);
+  const isMobile = useMediaQuery("(max-width: 767px)");
+  const isInView = useInView(ref, { 
+    margin: "0px 0px -50% 0px",
+    once: false
+  });
+
+  useEffect(() => {
+    if (isMobile) {
+      if (isInView) {
+        onInView();
+      } else {
+        onOutOfView();
+      }
+    }
+  }, [isMobile, isInView, onInView, onOutOfView]);
+
   return (
     <motion.div
+      ref={ref}
       className="relative flex flex-col gap-4 rounded-lg bg-card p-4 shadow-lg"
       initial="rest"
-      whileHover="hover"
-      animate="rest"
+      onClick={() => onCardClick(product)}
+      whileHover={!isMobile ? "hover" : undefined}
+      animate={isMobile && isAnimated ? "hover" : "rest"}
     >
       
       <motion.div
@@ -56,7 +81,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
         {/* テキストエリア */}
         <div>
-          <p className="text-xs text-gray-400">{product.team}</p>
+          <p className="text-xs text-gray-600">{product.team}</p>
           <motion.h3
             className="mt-1 font-bold text-3xl"
             variants={textVariants}
