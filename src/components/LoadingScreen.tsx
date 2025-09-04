@@ -63,7 +63,7 @@ const LoadingScreen = ({ onAnimationComplete }: LoadingScreenProps) => {
           {isMobile ? (
             // モバイルは1枚カーテン
             <motion.div
-              className="absolute top-0 left-0 w-full h-full bg-black"
+              className="absolute top-0 left-0 w-full h-full bg-background"
               initial={{ y: "0%" }}
               animate={{ y: "-100%" }}
               transition={{ duration: 0.8, ease: "easeInOut" }}
@@ -73,14 +73,14 @@ const LoadingScreen = ({ onAnimationComplete }: LoadingScreenProps) => {
             // PCは左右2枚
             <>
               <motion.div
-                className="absolute left-0 top-0 h-full w-1/2 bg-black"
+                className="absolute left-0 top-0 h-full w-1/2 bg-background"
                 initial={{ y: "0%" }}
                 animate={{ y: "-100%" }}
                 transition={{ duration: 0.8, ease: "easeInOut" }}
                 onAnimationComplete={onAnimationComplete}
               />
               <motion.div
-                className="absolute right-0 top-0 h-full w-1/2 bg-black"
+                className="absolute right-0 top-0 h-full w-1/2 bg-background"
                 initial={{ y: "0%" }}
                 animate={{ y: "-100%" }}
                 transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
