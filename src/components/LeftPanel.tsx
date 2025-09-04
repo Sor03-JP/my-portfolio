@@ -20,7 +20,7 @@ const LeftPanel = () => {
                   alt="Sora"
                   width={220}
                   height={190}
-                  className="h-[190px] w-auto"
+                  className="w-[220px] h-auto"
                 />
               </div>
             </div>
