@@ -34,7 +34,7 @@ export default function ProductsPage() {
                   alt="Products"
                   width={440}
                   height={190}
-                  className="w-[440px] h-[190px]"
+                  className="w-[440px] h-auto"
                 />
               </div>
             </div>

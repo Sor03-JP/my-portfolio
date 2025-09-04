@@ -41,7 +41,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
       <div className="relative z-10 flex flex-col gap-4">
         <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
           <motion.div
-            className="h-full w-full"
+            className="relative h-full w-full"
             variants={imageVariants}
             transition={{ duration: 0.2, ease: "easeInOut" }}
           >

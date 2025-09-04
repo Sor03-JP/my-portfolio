@@ -27,7 +27,7 @@ const Footer = () => {
             alt="Sora"
             width={120}
             height={40}
-            className="h-auto"
+            className="w-[120px] h-auto"
           />
 
         {/* nav */}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import LoadingScreen from "@/components/LoadingScreen";
 
@@ -10,17 +10,16 @@ type ClientLayoutProps = {
 };
 
 const ClientLayout = ({ children, fontClasses }: ClientLayoutProps) => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [loadingDone, setLoadingDone] = useState(false);
 
   return (
     <body className={`${fontClasses} bg-background text-primary`}>
+      {children}
       <AnimatePresence>
-        {isLoading && (
-          <LoadingScreen onAnimationComplete={() => setIsLoading(false)} />
+        {!loadingDone && (
+          <LoadingScreen onAnimationComplete={() => setLoadingDone(true)} />
         )}
       </AnimatePresence>
-      
-      {!isLoading && children}
     </body>
   );
 };
