@@ -61,12 +61,12 @@ const LoadingScreen = ({ onAnimationComplete }: LoadingScreenProps) => {
       {phase === "curtain" && (
         <>
           {isMobile ? (
-            // モバイルは1枚
+            // モバイルは1枚カーテン
             <motion.div
               className="absolute top-0 left-0 w-full h-full bg-black"
               initial={{ y: "0%" }}
               animate={{ y: "-100%" }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
               onAnimationComplete={onAnimationComplete}
             />
           ) : (
@@ -84,6 +84,7 @@ const LoadingScreen = ({ onAnimationComplete }: LoadingScreenProps) => {
                 initial={{ y: "0%" }}
                 animate={{ y: "-100%" }}
                 transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
+                onAnimationComplete={onAnimationComplete} // 右カーテン完了時も発火
               />
             </>
           )}
