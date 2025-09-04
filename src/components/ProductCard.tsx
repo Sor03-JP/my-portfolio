@@ -29,7 +29,7 @@ const textVariants = {
   hover: { color: "#0D1117" },
 };
 
-const ProductCard = ({ product, onCardClick, isAnimated, onInView, onOutOfView  }: ProductCardProps) => {
+const ProductCard = ({ product, onCardClick, isAnimated, onInView, onOutOfView }: ProductCardProps) => {
   const ref = useRef(null);
   const isMobile = useMediaQuery("(max-width: 767px)");
   const isInView = useInView(ref, { 

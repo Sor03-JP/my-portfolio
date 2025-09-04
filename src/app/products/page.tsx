@@ -14,13 +14,13 @@ import type { Product } from "@/lib/products-data";
 export default function ProductsPage() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
-  const [animatedCardId, setAnimatedCardId] = useState<string | null>(null);
+  const [animatedCardId, setAnimatedCardId] = useState<string | number | null>(null);
 
-  const handleCardInView = (id: string) => {
+  const handleCardInView = (id: string | number) => {
     setAnimatedCardId(id);
   };
 
-  const handleCardOutOfView = (id: string) => {
+  const handleCardOutOfView = (id: string | number) => {
     if (animatedCardId === id) {
       setAnimatedCardId(null);
     }
