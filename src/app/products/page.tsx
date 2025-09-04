@@ -14,6 +14,18 @@ import type { Product } from "@/lib/products-data";
 export default function ProductsPage() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
+  const [animatedCardId, setAnimatedCardId] = useState<string | number | null>(null);
+
+  const handleCardInView = (id: string | number) => {
+    setAnimatedCardId(id);
+  };
+
+  const handleCardOutOfView = (id: string | number) => {
+    if (animatedCardId === id) {
+      setAnimatedCardId(null);
+    }
+  };
+
   return (
     <main>
       <MobileMenu />
@@ -47,7 +59,13 @@ export default function ProductsPage() {
                 onClick={() => setSelectedProduct(product)}
                 className="cursor-pointer"
               >
-                <ProductCard product={product} />
+                <ProductCard
+                  product={product}
+                  onCardClick={() => setSelectedProduct(product)}
+                  isAnimated={animatedCardId === product.title}
+                  onInView={() => handleCardInView(product.title)}
+                  onOutOfView={() => handleCardOutOfView(product.title)}
+                />
               </div>
             ))}
           </div>
