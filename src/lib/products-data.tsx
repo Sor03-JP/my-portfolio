@@ -45,7 +45,7 @@ export const productsData: Product[] = [
     tags: ["UXUI", "Frontend", "技育CAMPハッカソン2025 Vol.1", "最優秀賞"],
     details: {
       coverImageSrc: "/Notepia-cover.png",
-      liveUrl: "https://notepia.cyberhub.jp/",
+      liveUrl: "https://notepia.iniad.org.uk/",
       githubUrl: "https://github.com/Hal-93/Notepia",
       developmentPeriod: "2025年3月-5月",
       description: (
