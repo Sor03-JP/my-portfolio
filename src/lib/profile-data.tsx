@@ -16,13 +16,13 @@ export const aboutData = {
 
 // 経歴セクションのデータ
 export const biographyData = [
-  { year: "2023年4月～", event: "東洋大学情報連携学部情報連携学科 (INIAD) に入学" },
+  { year: "2023年4月～", event: "東洋大学情報連携学部情報連携学科 (INIAD) に入学。" },
   { year: "2024年6月", event: "人生初ハッカソンに挑戦し、プレゼンを担当。ChefCam.という冷蔵庫の中を写真で撮ることでレシピを提案してくれるWebサービスを開発し最優秀賞を受賞。" },
   { year: "2025年3月", event: "2度目のハッカソンに挑戦し、デザイン/フロントエンド/UIUX改善/プレゼンを担当。NotepiaというWebサービスを開発し最優秀賞を受賞。" },
-  { year: "2025年5月", event: "サポーターズ技育博Vol.2にNotepiaを提出し参加" },
+  { year: "2025年5月", event: "サポーターズ技育博Vol.2にNotepiaを提出し参加。" },
   { year: "2025年6月～12月", event: "株式会社dotbindにて長期インターンに参加。フロントエンドエンジニアとして新規サービス開発に従事し、UIデザインから初期リリースに向けたMVPの開発まで一貫して携わり、ゼロからのプロダクト開発サイクルを経験。" },
-  { year: "2025年8月", event: "株式会社GA technologiesにて短期インターン(GIANT LEAP for TECH)に参加" },
-  { year: "2025年9月", event: "Sora's Portfolioを作成" },
+  { year: "2025年8月", event: "株式会社GA technologiesにて短期インターン(GIANT LEAP for TECH)に参加。" },
+  { year: "2025年9月", event: "Sora's Portfolioを作成。" },
 ];
 
 // 技術スタックのデータ
