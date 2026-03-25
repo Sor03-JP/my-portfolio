@@ -5,6 +5,7 @@ import { ExternalLink, Github, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { notoSansJPBold } from "@/app/ui/fonts";
 
 type ProductModalProps = {
   product: Product | null;
@@ -14,7 +15,9 @@ type ProductModalProps = {
 // ヘルパーコンポーネント: 各セクションのタイトルと内容を整形
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <div className="mb-8">
-    <h3 className="font-bold text-lg mb-3 border-b border-gray-700 pb-2">{title}</h3>
+    <h3 className={`${notoSansJPBold.className} text-lg mb-3 border-b border-gray-700 pb-2`}>
+      {title}
+    </h3>
     {children}
   </div>
 );
@@ -52,9 +55,10 @@ const ProductModal = ({ product, onClose }: ProductModalProps) => {
               {/* --- モーダルコンテンツ --- */}
               <div className="flex-1 overflow-y-auto p-8 scrollbar-hide">
                 {/* 1. タイトルを一番上に配置 */}
-                <h2 className="font-en text-4xl font-bold text-left mb-2">{product.title}</h2>
+                <h2 className={`${notoSansJPBold.className} text-4xl text-left mb-2`}>
+                  {product.title}
+                </h2>
                 <p className="text-sm text-md mb-2">{product.team} | {product.details.developmentPeriod}</p>
-                
                 <div className="flex gap-4 items-center mb-4">
                   {product.details.liveUrl && (
                     <a href={product.details.liveUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-1">
