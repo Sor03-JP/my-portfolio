@@ -17,6 +17,7 @@ const ScrollToTopButton = () => {
       onClick={scrollToTop}
       whileHover={{ rotate: -45, scale: 1.1 }}
       transition={{ duration: 0.3 }}
+      aria-label="ページトップへ戻る"
     >
       <Rocket className="h-8 w-8" />
     </motion.button>
