@@ -5,6 +5,7 @@ import Image from "next/image";
 import { aboutData, biographyData, techStackData, likesData } from "@/lib/profile-data";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { notoSansJPBold } from "@/app/ui/fonts";
 
 // セクション全体を囲むコンポーネント
 const Section = ({
@@ -81,7 +82,9 @@ const ProfileContent = () => {
           <Image src={aboutData.imageSrc} alt={aboutData.name} fill className="object-cover" />
         </div>
         <div className="col-span-1 lg:col-span-2 text-left">
-          <h3 className="text-2xl font-bold text-primary mb-2">{aboutData.name}</h3>
+          <h3 className={`${notoSansJPBold.className} text-2xl text-primary mb-2`}>
+            {aboutData.name}
+          </h3>
           <p className="leading-relaxed text-gray-300">{aboutData.bio}</p>
         </div>
       </section>
@@ -94,9 +97,9 @@ const ProfileContent = () => {
       >
         <div className="flex flex-col gap-y-6">
           {biographyData.map((item) => (
-            <BiographyItem 
+            <BiographyItem
             key={`${item.year}-${item.event.slice(0, 20)}`}
-            year={item.year} 
+            year={item.year}
             event={item.event} />
           ))}
         </div>
@@ -129,7 +132,9 @@ const ProfileContent = () => {
             <div key={like.title} className="flex items-center gap-x-4">
               <div className="flex-shrink-0 w-24 h-24 md:w-32 md:h-32 flex items-center justify-center">{like.icon}</div>
               <div>
-                <h4 className="font-bold text-primary">{like.title}</h4>
+                <h4 className={`${notoSansJPBold.className} text-primary`}>
+                  {like.title}
+                </h4>
                 <p className="text-sm text-gray-300 mt-1">{like.description}</p>
               </div>
             </div>

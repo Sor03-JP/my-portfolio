@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useEffect } from "react";
 import type { Product } from "@/lib/products-data";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { notoSansJPBold } from "@/app/ui/fonts";
 
 type ProductCardProps = {
   product: Product;
@@ -32,7 +33,7 @@ const textVariants = {
 const ProductCard = ({ product, onCardClick, isAnimated, onInView, onOutOfView }: ProductCardProps) => {
   const ref = useRef(null);
   const isMobile = useMediaQuery("(max-width: 767px)");
-  const isInView = useInView(ref, { 
+  const isInView = useInView(ref, {
     margin: "0px 0px -50% 0px",
     once: false
   });
@@ -56,7 +57,7 @@ const ProductCard = ({ product, onCardClick, isAnimated, onInView, onOutOfView }
       whileHover={!isMobile ? "hover" : undefined}
       animate={isMobile && isAnimated ? "hover" : "rest"}
     >
-      
+
       <motion.div
         className="absolute inset-0 z-0 rounded-lg bg-foreground"
         variants={fillVariants}
@@ -83,7 +84,7 @@ const ProductCard = ({ product, onCardClick, isAnimated, onInView, onOutOfView }
         <div>
           <p className="text-xs text-gray-600">{product.team}</p>
           <motion.h3
-            className="mt-1 font-bold text-3xl"
+            className={`${notoSansJPBold.className} mt-1 text-3xl`}
             variants={textVariants}
             transition={{ duration: 0.2 }}
           >

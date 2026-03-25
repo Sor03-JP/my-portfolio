@@ -24,7 +24,7 @@ const LeftPanel = () => {
                 />
               </div>
             </div>
-            
+
             <p className="font-en mt-0 md:mt-2 text-sm tracking-wider">
               Frontend Engineer
             </p>
@@ -44,6 +44,7 @@ const LeftPanel = () => {
             height={1698}
             className="absolute bottom-0 left-1/2 h-auto w-auto max-h-[600px] -translate-x-[40%] translate-y-[35%] filter brightness-60"
             priority
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
       </div>

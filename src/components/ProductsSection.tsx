@@ -26,11 +26,12 @@ const ProductsSection = () => {
             alt="Macbook portfolio"
             width={1500}
             height={1126}
+            sizes="(max-width: 767px) 60vw, 25vw"
             className="transition-all duration-300 ease-in-out hover:scale-110 hover:-rotate-3 hover:opacity-100 opacity-70"
           />
         </div>
 
-        <div 
+        <div
           className="absolute top-1/2 left-1/2 w-[30%] -translate-x-[-50%] -translate-y-[100%] cursor-pointer md:w-[20%] md:-translate-x-[-90%] md:-translate-y-[110%]"
           onClick={() => notepiaData && setSelectedProduct(notepiaData)}
         >
@@ -39,6 +40,7 @@ const ProductsSection = () => {
             alt="iPhone portfolio"
             width={549}
             height={725}
+            sizes="(max-width: 767px) 30vw, 10vw"
             className="transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-3 hover:opacity-100 opacity-70"
           />
         </div>
