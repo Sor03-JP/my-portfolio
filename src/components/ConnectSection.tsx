@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Twitter, Github, Copy } from "lucide-react";
 
-// 各接続情報のリンクをまとめたサブコンポーネント
 const ConnectLink = ({
   icon,
   serviceName,
@@ -23,7 +22,6 @@ const ConnectLink = ({
   onClick?: () => void;
   isCopyable?: boolean;
 }) => {
-  // アカウント名部分をリンクまたはボタンにする
   const AccountInteractive = () => {
     const content = (
       <p className="font-en text-lg text-primary group-hover:underline">
@@ -56,6 +54,7 @@ const ConnectLink = ({
           <button
             onClick={onClick}
             className="text-gray-400 transition-colors hover:text-primary"
+            aria-label={`${serviceName}をコピーする`}
           >
             <Copy className="h-4 w-4" />
           </button>
@@ -91,7 +90,7 @@ const ConnectSection = () => {
       }
     });
   };
-  
+
   useEffect(() => {
     if (isCopied) {
       const timer = setTimeout(() => setIsCopied(false), 2000);
@@ -113,13 +112,13 @@ const ConnectSection = () => {
             feedbackText={isCopied ? "COPIED!" : undefined}
             isCopyable
           />
-          <ConnectLink 
+          <ConnectLink
             icon={<Twitter className="h-5 w-5 text-gray-400"/>}
             serviceName="X (Twitter)"
             accountName="@Sora27_eng"
             href="https://x.com/Sora27_eng"
           />
-          <ConnectLink 
+          <ConnectLink
             icon={<Github className="h-5 w-5 text-gray-400"/>}
             serviceName="GITHUB"
             accountName="@Sor03-JP"
