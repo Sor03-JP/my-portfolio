@@ -2,6 +2,9 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+Use Node.js 24.22.1 (see `.node-version`). With mise, run `mise install`.
+Install dependencies with `npm ci`.
+
 First, run the development server:
 
 ```bash
