@@ -22,25 +22,11 @@ const ConnectLink = ({
   onClick?: () => void;
   isCopyable?: boolean;
 }) => {
-  const AccountInteractive = () => {
-    const content = (
-      <p className="font-en text-lg text-primary group-hover:underline">
-        {accountName}
-      </p>
-    );
-    if (href) {
-      return (
-        <a href={href} target="_blank" rel="noopener noreferrer" className="group">
-          {content}
-        </a>
-      );
-    }
-    return (
-      <button onClick={onClick} className="group text-left">
-        {content}
-      </button>
-    );
-  };
+  const content = (
+    <p className="font-en text-lg text-primary group-hover:underline">
+      {accountName}
+    </p>
+  );
 
   return (
     <div>
@@ -49,7 +35,15 @@ const ConnectLink = ({
         <span className="font-en text-base text-gray-400">{serviceName}</span>
       </div>
       <div className="mt-1 flex items-center gap-x-2">
-        <AccountInteractive />
+        {href ? (
+          <a href={href} target="_blank" rel="noopener noreferrer" className="group">
+            {content}
+          </a>
+        ) : (
+          <button onClick={onClick} className="group text-left">
+            {content}
+          </button>
+        )}
         {isCopyable && (
           <button
             onClick={onClick}
